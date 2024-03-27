@@ -1,10 +1,10 @@
 # tcc-information-systems
 this repository gathers the material of my course conclusion work (TCC) at Unisinos - theme of the work: Quantum Computing - Analysis of Quantum Algorithms for Solving the SAT Problem in the NISQ Era
 
-## Comparativo de Algoritmos Abordados nos Trabalhos Relacionados
+# Comparison of Algorithms Covered in Related Works
 
-|          Trabalho           |     Modelo     |      Algoritmo   |
-|-----------------------------|----------------|------------------|
+|               Paper               |          Model         |          Algorithm         |
+|-----------------------------------|------------------------|----------------------------|
 | [CHENG; TAO, 2007](./papers/QuantumCooperativeSearchAlgorithmFor3SAT.pdf) | Quântico | Quântico |
 | [LEPORATI; FELLONI, 2007](./papers/ThreeQuantumAlgorithmsToSolve3SAT.pdf) | Quântico | Grover |
 | [CHANG et al., 2008](./papers/QuantumCooperativeSearchAlgorithmFor3SAT.pdf) | Quântico | UREM P Systems |
