@@ -17,7 +17,7 @@
 
 * ## [Vertex Cover](https://www.google.com.br/books/edition/The_Vertex_Cover_Algorithm/66KfDwAAQBAJ?hl=pt-BR&gbpv=1&dq=vertex+cover&printsec=frontcover/)
 
-* ## [Clique Problem](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2003-04/dna-computing/clique.htm/)
+* ## [Clique Problem](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2003-04/dna-computing/clique.htm)
 
 
 
