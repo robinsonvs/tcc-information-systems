@@ -1,5 +1,5 @@
 # tcc-information-systems
-**This repository brings together the material from my course completion work (TCC) at Unisinos - work theme: Quantum Computing - Analysis of Quantum Algorithms to Solve the SAT Problem in the NISQ Era**
+**This repository brings together the material from my course completion work (TCC) at Unisinos - Work Topic: Quantum Computing - Analysis of Quantum Algorithms for Solving the SAT Problem in the NISQ Era**
 
 ## Articles used to support the work:
 
