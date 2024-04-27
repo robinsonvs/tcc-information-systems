@@ -37,12 +37,6 @@ The main objective of this experiment is to showcase the potential of quantum co
 
 A complete graph is a type of graph in which each pair of vertices is connected by a unique edge. In this experiment, we will generate a complete graph where the vertices represent elements, and the edges represent relationships between these elements. The complete graph can be generated randomly or based on specific criteria, depending on the problem context.
 
-```
-def generate_complete_graph(clique_size):
-    graph = [[1 if i != j else 0 for j in range(clique_size)] for i in range(clique_size)]
-    return remove_random_edges(graph, clique_size)
-``` 
-
 ### 2. Identifying the Maximum Clique
 
 The maximum clique in a graph is a subset of vertices in which every pair of vertices is connected by an edge. The identification of the maximum clique involves applying specific graph search algorithms, such as the Bron-Kerbosch algorithm or algorithms based on integer programming, to find the set of vertices that forms the largest clique in the graph.
