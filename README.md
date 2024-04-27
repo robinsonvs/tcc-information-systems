@@ -65,8 +65,9 @@ By following this methodology, we aim to demonstrate the feasibility and effecti
 | [ALASOW; PERKOWSKI, 2022](./papers/QuantumAlgorithmForMaximumSatisfiability.pdf) | Hybrid | Grover |
 | [VARMANTCHAONALA et al., 2023](./papers/QuantumHybridAlgorithmForSolvingSATProblem.pdf) | Hybrid | Grover |
 
-* ## [Clique Problem](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2003-04/dna-computing/clique.htm)
-* ## [Grover Algorithm](https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/grovers-algorithm)
+
+* ### [Clique Problem](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2003-04/dna-computing/clique.htm)
+* ### [Grover Algorithm](https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/grovers-algorithm)
 
 
 
