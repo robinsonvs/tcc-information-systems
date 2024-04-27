@@ -41,7 +41,7 @@ A complete graph is a type of graph in which each pair of vertices is connected 
 def generate_complete_graph(clique_size):
     graph = [[1 if i != j else 0 for j in range(clique_size)] for i in range(clique_size)]
     return remove_random_edges(graph, clique_size)
-``
+``` 
 
 ### 2. Identifying the Maximum Clique
 
