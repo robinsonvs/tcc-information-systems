@@ -1,18 +1,6 @@
 # tcc-information-systems
 **This repository brings together the material from my course completion work (TCC) at Unisinos - Work Topic: Quantum Computing - Analysis of Quantum Algorithms for Solving the SAT Problem in the NISQ Era**
 
-## Articles used to support the work:
-
-|                          Paper                   |                  Model               |          Algorithm            |
-|--------------------------------------------------|--------------------------------------|-------------------------------|
-| [CHENG; TAO, 2007](./papers/QuantumCooperativeSearchAlgorithmFor3SAT.pdf)               |      Quantum | Grover         |
-| [LEPORATI; FELLONI, 2007](./papers/ThreeQuantumAlgorithmsToSolve3SAT.pdf)               |      Quantum | Grover         |
-| [CHANG et al., 2008](./papers/QuantumCooperativeSearchAlgorithmFor3SAT.pdf)             |      Quantum | UREM P Systems |
-| [FENG; BLANZIERI; LIANG, 2008](./papers/ImprovedQuantumInspireEvolutionaryAlgorithmAndItsApplicationTo3SATProblems.pdf) | - | Lipton’s DNA-Based |
-| [WANG; LIU; LIU, 2020](./papers/AGenericVariableInputsQuantumAlgorithmFor3SATProblem.pdf) | - | QIEA |
-| [ALASOW; PERKOWSKI, 2022](./papers/QuantumAlgorithmForMaximumSatisfiability.pdf) | Hybrid | Grover |
-| [VARMANTCHAONALA et al., 2023](./papers/QuantumHybridAlgorithmForSolvingSATProblem.pdf) | Hybrid | Grover |
-
 
 ## Introduction
 
@@ -65,6 +53,17 @@ The Grover algorithm is a quantum algorithm used for searching an unstructured l
 
 By following this methodology, we aim to demonstrate the feasibility and effectiveness of quantum algorithms, such as the Grover algorithm, in solving combinatorial optimization problems. Each step of the process is essential for the success of the experiment, from generating the complete graph to applying the Grover algorithm to find valid solutions to the maximum clique problem.
 
+## Articles used to support the work:
+
+|                          Paper                   |                  Model               |          Algorithm            |
+|--------------------------------------------------|--------------------------------------|-------------------------------|
+| [CHENG; TAO, 2007](./papers/QuantumCooperativeSearchAlgorithmFor3SAT.pdf)               |      Quantum | Grover         |
+| [LEPORATI; FELLONI, 2007](./papers/ThreeQuantumAlgorithmsToSolve3SAT.pdf)               |      Quantum | Grover         |
+| [CHANG et al., 2008](./papers/QuantumCooperativeSearchAlgorithmFor3SAT.pdf)             |      Quantum | UREM P Systems |
+| [FENG; BLANZIERI; LIANG, 2008](./papers/ImprovedQuantumInspireEvolutionaryAlgorithmAndItsApplicationTo3SATProblems.pdf) | - | Lipton’s DNA-Based |
+| [WANG; LIU; LIU, 2020](./papers/AGenericVariableInputsQuantumAlgorithmFor3SATProblem.pdf) | - | QIEA |
+| [ALASOW; PERKOWSKI, 2022](./papers/QuantumAlgorithmForMaximumSatisfiability.pdf) | Hybrid | Grover |
+| [VARMANTCHAONALA et al., 2023](./papers/QuantumHybridAlgorithmForSolvingSATProblem.pdf) | Hybrid | Grover |
 
 * ## [Clique Problem](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2003-04/dna-computing/clique.htm)
 * ## [Grover Algorithm](https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/grovers-algorithm)
