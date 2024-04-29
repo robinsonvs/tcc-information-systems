@@ -9,6 +9,8 @@ from matplotlib.backend_bases import MouseEvent
 from math import pi, sqrt
 from heapq import nlargest
 
+from qiskit_aer import AerSimulator
+
 """Feel free to modify the following constants."""
 N: int = 5                                # Number of qubits
 SEARCH_VALUES: set[int] = { 11, 9, 0, 3 } # Set of m nonnegative integers to search for using Grover's algorithm (i.e. TARGETS in base 10)
@@ -18,8 +20,10 @@ FONTSIZE: int = 10                        # Histogram's font size
 """Unless you know what you are doing, please do not modify the following constants, otherwise you risk breaking the program."""
 TARGETS: set[str] = { f"{s:0{N}b}" for s in SEARCH_VALUES }     # Set of m N-qubit binary strings representing target state(s) (i.e. SEARCH_VALUES in base 2)
 QUBITS: qr = qr(N, "qubit")                                     # N-qubit quantum register
-BACKEND_NAME: str = "ibmq_qasm_simulator"                       # Name of backend to run the algorithm on
-BACKEND: Backend = QiskitRuntimeService().backend(BACKEND_NAME) # Backend to run the algorithm on
+#BACKEND_NAME: str = "ibmq_qasm_simulator"                       # Name of backend to run the algorithm on
+#BACKEND: Backend = QiskitRuntimeService().backend(BACKEND_NAME) # Backend to run the algorithm on
+
+BACKEND: Backend = AerSimulator()
 
 def print_circuit(circuit: qc, name: str = "") -> None:
     """Print quantum circuit.
@@ -247,8 +251,12 @@ if __name__ == "__main__":
     grover_circuit = grover()
 
     # Simulate Grover's algorithm with a Qiskit backend and get results
-    with BACKEND.open_session() as session:
-        results = BACKEND.run(transpile(grover_circuit, BACKEND, optimization_level = 2), shots = SHOTS).result()
+    #with BACKEND.open_session() as session:
+    #    results = BACKEND.run(transpile(grover_circuit, BACKEND, optimization_level = 2), shots = SHOTS).result()
+
+    new_circuit = transpile(grover_circuit, BACKEND)
+    result = BACKEND.run(new_circuit).result()
+    results = result.get_counts(grover_circuit)        
 
     # Get each state's frequency and display simulation results
-    display_results(results.get_counts(), False)
+    display_results(results, False)
