@@ -1,4 +1,3 @@
-
 import random
 import pycosat
 import numpy as np
@@ -73,31 +72,38 @@ def amplify(num_of_qubits, num_sub_states):
         for i in range(1, num_sub_states):
             sup = [0.] * N
             num_el = (N // num_sub_states) + 1
+            sub_state = QuantumCircuit(num_of_qubits)
 
             for j in range(index, sup_index + 1):
                 sup[j] = np.sqrt((N / num_el) / N)
 
-            subsets[k] = sup
+            sub_state.initialize(sup, range(num_of_qubits))
+            subsets[k] = sub_state
             index = index + (N // num_sub_states) + 1
             sup_index = sup_index + (N // num_sub_states) + 1
             k = k + 1
 
+        sub_state = QuantumCircuit(num_of_qubits)
         sup = [0.] * N
-        for j in range(len(sup)):
+        for j in range(index-1, sup_index):
             sup[j] = np.sqrt((N / num_el) / N)
 
-        subsets[num_sub_states - 1] = sup
+        sub_state.initialize(sup, range(num_of_qubits))
+        subsets[num_sub_states - 1] = sub_state
 
     else:
         k = 0
         for i in range(0, num_sub_states):
             sup = [0.] * N
             num_el = N / num_sub_states
+            sub_state = QuantumCircuit(num_of_qubits)
 
             for j in range(index, sup_index):
                 sup[j] = np.sqrt((N / num_el) / N)
 
-            subsets[k] = sup
+            sub_state.initialize(sup, range(num_of_qubits))
+            subsets[k] = sub_state
+
             index = index + (N // num_sub_states)
             sup_index = sup_index + (N // num_sub_states)
             k = k + 1
@@ -193,23 +199,26 @@ if __name__ == '__main__':
                 G.add_edge(i, j)
 
 
-    # plt.figure(figsize=(6, 6))
-    # nx.draw(G, with_labels=True, font_weight='bold')
-    # plt.title('Grafo Gerado')
-    # plt.show()
+    plt.figure(figsize=(6, 6))
+    nx.draw(G, with_labels=True, font_weight='bold')
+    plt.title('Grafo Gerado')
+    plt.show()
 
     
     cnf_clauses = clique_max_sat(graph)
     for clause in cnf_clauses:
         print(clause)
 
+    print(cnf_clauses)
+
     max_clique = solve(len(graph), cnf_clauses)
     print("Clique máximo :", max_clique)
 
-    num_qubits = 4
+    num_qubits = 3
     num_sub_states = 2
     subsets = amplify(num_qubits, num_sub_states) 
 
+    #cnf_clauses = [[1, 2, 3], [-1, -2, -3], [-1, -2, -3]]
     #cnf_clauses = [[1, 2, -3], [-1, -2, -3], [-1, 2, 3]]
     #cnf_clauses = [[1, -2, -3, -4], [-1, 2, -3, -4], [-1, -2, 3, -4], [-1, -2, -3, 4]]
     #cnf_clauses = [[-1, -2, -3, -4], [-1, -2, -3, -4], [-1, -2, -3, -4], [-1, -2, -3, -4]]
@@ -228,19 +237,19 @@ if __name__ == '__main__':
 
     #print(grover)
 
-    substate_circuit = QuantumCircuit(num_qubits, name='Substate Circuit')
-
-    substate_circuit.initialize(subsets[0], range(num_qubits))
-
-    grover = grover.compose(substate_circuit)
-
-    #print(grover)
+    #substate_circuit = QuantumCircuit(num_qubits)
+    #substate_circuit.initialize(subsets[0], range(num_qubits))
+    #grover = grover.compose(substate_circuit)
 
     input_state(grover, f_in, f_out, num_qubits)
+    grover = grover.compose(subsets[0])
+
+    #print(grover)
+    #input_state(grover, f_in, f_out, num_qubits)
     #print(grover)
 
 
-    T = 1000
+    T = 2
     for t in range(T):
         oracle(grover, f_in, f_out, aux, cnf_clauses)
         inversion_about_average(grover, f_in, num_qubits)
@@ -258,5 +267,4 @@ if __name__ == '__main__':
     print("Counts:", counts)
 
     plot_histogram(counts)
-
     plt.show()
